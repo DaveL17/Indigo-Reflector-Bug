@@ -1,4 +1,4 @@
-# Indigo-Reflector-Bug
+# Indigo Reflector Bug
 A lightweight macOS menubar app displaying the status of the Indigo reflector connection
 
 Save this script to the Indigo Scripts folder at:
