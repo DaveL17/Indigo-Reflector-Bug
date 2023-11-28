@@ -1,13 +1,17 @@
 # Indigo Reflector Bug
 A lightweight macOS menubar app displaying the status of the Indigo reflector connection
 
+Up: ![alt text](reflector_up.png)
+Down:
+![alt text](reflector_down.png)
+
 Save this script to the Indigo Scripts folder at:
 ```text
 /Library/Application Support/Perceptive Automation/Scripts/reflector.py
 ```
 Can be installed anywhere, as long as Indigo can see it.
 
-Install the `rumps` python library using the Terminal command:
+Install the [`rumps`](https://github.com/jaredks/rumps) python library using the Terminal command:
 ```bash
 pip3.10 install rumps==0.4.0
 ```
