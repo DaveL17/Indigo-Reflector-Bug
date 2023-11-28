@@ -5,7 +5,7 @@ Up: ![alt text](reflector_up.png)
 Down:
 ![alt text](reflector_down.png)
 
-Save this script to the Indigo Scripts folder at:
+Download the file `reflector.py` above and save it to the Indigo Scripts folder at:
 ```text
 /Library/Application Support/Perceptive Automation/Scripts/reflector.py
 ```
