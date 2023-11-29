@@ -31,19 +31,24 @@ except ImportError:
     sys.exit()
 
 BASE_URL = f"{indigo.server.getInstallFolderPath()}/Web Assets/images/controls/variables/"
+CYCLE_TIME = 60
+OFFLINE_ICON = "Red Green Dot.png"
+ONLINE_ICON = "Red Green Dot+true.png"
 
 class MyApp(rumps.App):
-    """ rumps base class """
+    """ rumps base class for the application"""
     def __init__(self):
         super().__init__(name="", title="Indigo", icon=None)
 
-    @rumps.timer(60)  # cycle time in seconds
+    @rumps.timer(CYCLE_TIME)  # cycle time in seconds
     def change_title(self, sender):
-        """ rumps timer runs automatically """
-        if not indigo.server.getReflectorURL():
-            self.icon = BASE_URL + "Red Green Dot.png"  # Offline
-        else:
-            self.icon = BASE_URL + "Red Green Dot+true.png"  # Online
+        """
+        Change the icon based on server status.
+
+        rumps timer runs automatically
+        """
+        reflector_url = indigo.server.getReflectorURL()
+        self.icon = BASE_URL + (OFFLINE_ICON if not reflector_url else ONLINE_ICON)
 
 if __name__ == "__main__":
     MyApp().run()
