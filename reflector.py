@@ -11,7 +11,7 @@ Can be installed anywhere, as long as Indigo can see it.
 Install the `rumps` python library using the Terminal command:
     pip3.10 install rumps==0.4.0
 
-Run the `reflector.py` file as an linked script using an Indigo method of choice. For
+Run the `reflector.py` file as a linked script using an Indigo method of choice. For
 example, using a trigger:
     Type: "Indigo Server Startup"
     Condition: Always
@@ -23,23 +23,23 @@ NOTE: This is designed to be run on the machine running the Indigo server. It wi
       interrogate the server from another machine/location.
 """
 
+import sys
 try:
-    import sys
     import rumps
 except ImportError:
-    indigo.server.log(f"You must install the `rumps` library --> pip3.10 install rumps==0.4.0", isError=True)
+    indigo.server.log("You must install the `rumps` library --> pip3.10 install rumps==0.4.0", isError=True)
     sys.exit()
 
 BASE_URL = f"{indigo.server.getInstallFolderPath()}/Web Assets/images/controls/variables/"
 
 class MyApp(rumps.App):
-
+    """ rumps base class """
     def __init__(self):
         super().__init__(name="", title="Indigo", icon=None)
 
     @rumps.timer(60)  # cycle time in seconds
     def change_title(self, sender):
-
+        """ rumps timer runs automatically """
         if not indigo.server.getReflectorURL():
             self.icon = BASE_URL + "Red Green Dot.png"  # Offline
         else:
