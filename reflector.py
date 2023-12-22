@@ -30,10 +30,10 @@ except ImportError:
     indigo.server.log("You must install the `rumps` library --> pip3.10 install rumps==0.4.0", isError=True)
     sys.exit()
 
-BASE_URL = f"{indigo.server.getInstallFolderPath()}/Web Assets/images/controls/variables/"
-CYCLE_TIME = 60
+BASE_URL     = f"{indigo.server.getInstallFolderPath()}/Web Assets/images/controls/variables/"
+CYCLE_TIME   = 60
 OFFLINE_ICON = "Red Green Dot.png"
-ONLINE_ICON = "Red Green Dot+true.png"
+ONLINE_ICON  = "Red Green Dot+true.png"
 
 class MyApp(rumps.App):
     """ rumps base class for the application"""

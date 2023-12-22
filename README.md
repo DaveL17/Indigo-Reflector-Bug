@@ -2,8 +2,7 @@
 A lightweight macOS menubar app displaying the status of the Indigo reflector connection
 
 Up: ![alt text](reflector_up.png)
-Down:
-![alt text](reflector_down.png)
+Down: ![alt text](reflector_down.png)
 
 Download the file `reflector.py` above and save it to the Indigo Scripts folder at:
 ```text
@@ -24,4 +23,5 @@ example, using a trigger:
 
 ***CAUTION: Do not run this script as an embedded script (because Indigo will kill it after 10 seconds).***  
 
-NOTE: This is designed to be run on the machine running the Indigo server. It will not interrogate the server from another machine/location.
+NOTE: This is designed to be run on the machine running the Indigo server. It will not interrogate the server from 
+another machine/location.
