@@ -12,10 +12,10 @@ Can be installed anywhere, as long as Indigo can see it.
 
 Install the [`rumps`](https://github.com/jaredks/rumps) python library using the Terminal command:
 ```bash
-pip3.10 install rumps==0.4.0
+pip3 install rumps==0.4.0
 ```
 
-Run the `reflector.py` file as an linked script using an Indigo method of choice. For
+Run the `reflector.py` file as a linked script using an Indigo method of choice. For
 example, using a trigger:
   * Type: "Indigo Server Startup"
   * Condition: Always
