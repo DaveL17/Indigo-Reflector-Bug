@@ -9,7 +9,7 @@ Save this script to the Indigo Scripts folder at:
 Can be installed anywhere, as long as Indigo can see it.
 
 Install the `rumps` python library using the Terminal command:
-    pip3.10 install rumps==0.4.0
+    pip3 install rumps==0.4.0
 
 Run the `reflector.py` file as a linked script using an Indigo method of choice. For
 example, using a trigger:
@@ -20,20 +20,22 @@ example, using a trigger:
 CAUTION: Do not run this script as an embedded script (because Indigo will kill it after
          10 seconds).
 NOTE: This is designed to be run on the machine running the Indigo server. It will not
-      interrogate the server from another machine/location.
+      interrogate the reflector from another machine/location.
 """
 
 import sys
 try:
     import rumps
+    import indigo
 except ImportError:
-    indigo.server.log("You must install the `rumps` library --> pip3.10 install rumps==0.4.0", isError=True)
+    indigo.server.log("You must install the `rumps` library --> pip3 install rumps==0.4.0", isError=True)
     sys.exit()
 
 BASE_URL     = f"{indigo.server.getInstallFolderPath()}/Web Assets/images/controls/variables/"
 CYCLE_TIME   = 60
 OFFLINE_ICON = "Red Green Dot.png"
 ONLINE_ICON  = "Red Green Dot+true.png"
+
 
 class MyApp(rumps.App):
     """ rumps base class for the application"""
@@ -49,6 +51,7 @@ class MyApp(rumps.App):
         """
         reflector_url = indigo.server.getReflectorURL()
         self.icon = BASE_URL + (OFFLINE_ICON if not reflector_url else ONLINE_ICON)
+
 
 if __name__ == "__main__":
     MyApp().run()
